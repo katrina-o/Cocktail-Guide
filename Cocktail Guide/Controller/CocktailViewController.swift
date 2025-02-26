@@ -21,6 +21,7 @@ final class CocktailViewController: UIViewController, CocktailViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
+
         cocktailsManager.fetchData { response in
             self.cocktails = response
             
