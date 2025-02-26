@@ -16,7 +16,7 @@ extension UILabel {
                             numberOfLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.textColor = .black
+        label.textColor = .systemPink
         label.font = isBold ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)
         label.textAlignment = textAlignment
         label.numberOfLines = numberOfLines

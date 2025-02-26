@@ -25,7 +25,10 @@ final class CocktailView : UIView {
     }()
     let searchBar: UISearchBar = {
         let search = UISearchBar()
-        search.placeholder = "find youself"
+        search.placeholder = "find coctail for youself"
+        search.searchBarStyle = .minimal
+        search.backgroundColor = .purple.withAlphaComponent(0.3)
+        search.searchTextField.backgroundColor = .purple
         search.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
@@ -72,7 +75,7 @@ extension CocktailView {
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20)
+            tableView.bottomAnchor.constraint(equalTo:safeAreaLayoutGuide.bottomAnchor, constant: 20)
         ])
     }
 }
