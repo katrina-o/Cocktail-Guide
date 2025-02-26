@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CocktailModel : Decodable {
+    var ingredients: [String]
+    var instructions: String
+    var name: String
+}
