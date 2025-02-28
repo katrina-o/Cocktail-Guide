@@ -36,15 +36,16 @@ class CocktailCell: UITableViewCell {
         NSLayoutConstraint.activate([
             cocktailName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             cocktailName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            cocktailName.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            cocktailName.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             
-            cocktailIngrediens.topAnchor.constraint(equalTo: cocktailName.bottomAnchor, constant: 20),
+            cocktailIngrediens.topAnchor.constraint(equalTo: cocktailName.bottomAnchor, constant: 10),
             cocktailIngrediens.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             cocktailIngrediens.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            cocktailInsruction.topAnchor.constraint(equalTo: cocktailIngrediens.bottomAnchor, constant: 20),
+            cocktailInsruction.topAnchor.constraint(equalTo: cocktailIngrediens.bottomAnchor, constant: 10),
             cocktailInsruction.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             cocktailInsruction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            cocktailInsruction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 }

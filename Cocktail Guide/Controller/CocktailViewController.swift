@@ -14,6 +14,7 @@ final class CocktailViewController: UIViewController, CocktailViewDelegate {
     private var cocktails: [CocktailModel] = []
     private var searchActive : Bool = false
     var filtered:[CocktailModel] = []
+ 
     
     override func loadView() {
         view = cocktailView
@@ -43,7 +44,7 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchActive ? filtered.count : cocktails.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CocktailCell.identifier, for: indexPath) as? CocktailCell else {
             return UITableViewCell()
@@ -51,9 +52,10 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cocktail = searchActive ? filtered[indexPath.row] : cocktails[indexPath.row]
         cell.config(ingredients: cocktail.ingredients, instruction: cocktail.instructions, name: cocktail.name)
-        cell.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        cell.backgroundColor = .purple.withAlphaComponent(0.6)
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 20
+        cell.layer.masksToBounds = false
         cell.layer.borderWidth = 0.7
         cell.layer.borderColor = UIColor.purple.cgColor
         return cell
@@ -61,6 +63,16 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
+    }
+   
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30 // Высота отступа между ячейками
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear // Прозрачный фон
+        return footerView
     }
 }
 

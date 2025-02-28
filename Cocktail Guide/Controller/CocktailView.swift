@@ -26,9 +26,10 @@ final class CocktailView : UIView {
     let searchBar: UISearchBar = {
         let search = UISearchBar()
         search.placeholder = "find coctail for youself"
+        search.searchTextField.textColor = UIColor.red
         search.searchBarStyle = .minimal
         search.backgroundColor = .purple.withAlphaComponent(0.3)
-        search.searchTextField.backgroundColor = .purple
+        search.searchTextField.backgroundColor = .purple.withAlphaComponent(0.3)
         search.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
